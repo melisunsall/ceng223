@@ -1,0 +1,147 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+%\topmargin=0cm
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+%\setlength{\leftmargin}{-5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+%misc libraries goes here
+\usepackage{fitch}
+
+
+\begin{document}
+
+\section*{Student Information } 
+%Write your full name and id number between the colon and newline
+%Put one empty space character after colon and before newline
+Full Name : Melis Ece Ünsal  \\
+Id Number : 2237865 \\
+
+% Write your answers below the section tags
+\section*{Answer 1}
+a)
+\begin{displaymath}
+\begin{array}{|c c|c|c|c|c}
+% |c c|c| means that there are three columns in the table and
+% a vertical bar ’|’ will be printed on the left and right borders,
+% and between the second and the third columns.
+% The letter ’c’ means the value will be centered within the column,
+% letter ’l’, left-aligned, and ’r’, right-aligned.
+p & q & \neg{p} & q \rightarrow \neg{p} & p\leftrightarrow q & (q \rightarrow \neg{p})\leftrightarrow (p\leftrightarrow q)\\ % Use & to separate the columns
+\hline % Put a horizontal line between the table header and the rest.
+T & T & F & F & T & F\\
+T & F & F & T & F & F\\
+F & T & T & T & F & F\\
+F & F & T & T & T & T\\
+\end{array}
+\end{displaymath}
+b)
+\begin{displaymath}
+\begin{array}{|c c c|c|c|c|c|c}
+% |c c|c| means that there are three columns in the table and
+% a vertical bar ’|’ will be printed on the left and right borders,
+% and between the second and the third columns.
+% The letter ’c’ means the value will be centered within the column,
+% letter ’l’, left-aligned, and ’r’, right-aligned.
+p & q & r & p \vee q & p\leftrightarrow r & q \rightarrow r & (p \vee q)\wedge(p\leftrightarrow r)\wedge(q \rightarrow r ) & ((p \vee q)\wedge(p\leftrightarrow r)\wedge(q \rightarrow r ))\rightarrow r \\ % Use & to separate the columns
+\hline % Put a horizontal line between the table header and the rest.
+T & T & T & T & T & T & T & T \\
+T & T & F & T & F & F & T & T\\
+T & F & T & T & T & T & T & T\\
+T & F & F & T & F & T & T & T\\
+F & T & T & T & T & T & T & T\\
+F & T & F & T & T & F & T & T\\
+F & F & T & F & T & T & T & T\\
+F & F & F & F & T & T & T & T\\
+\end{array}
+\end{displaymath}
+\\
+Since at the end we reach all True's, then this means that we found tautology.
+
+
+\section*{Answer 2}
+	We need to prove \(\neg{p} \rightarrow (q\rightarrow r ) \equiv q \rightarrow(p \vee r):\)
+	
+		\(\neg{p} \rightarrow (q\rightarrow r )\) \\
+		\(\equiv p \vee (q \rightarrow r)\)     logical eqv. implication elim. \\
+		\(\equiv p \vee (\neg{q} \vee r)\)   logical eqv. implication elim.\\
+		\(\equiv \neg{q} \vee ( p\vee r)\)  assosiative law\\
+		\(\equiv q\rightarrow ( p\vee r)\) logical egv. implicaton introduction
+		
+	
+	
+	
+
+\section*{Answer 3}
+a) $\forall$x L(x,Burak)\\
+b)$\forall$y L(Hazal,y)\\
+c)$\forall$x$\exists$y L(x,y) \\
+d)\(\neg{\exists}\)x ($\forall$y L(x,y))\\
+e)\\
+f)\(\neg{\exists}\)x (L(x,Burak) $\wedge$ L(x,Mustafa))\\
+g)$\exists$x$\exists$y (L(Ceren,x) $\wedge$ L(Ceren,y) $\wedge$ (x $\neq$ y))$\wedge$ $\forall$z (L(Ceren,z) $\rightarrow$ ((z=x) $\vee$ (z=y)))\\
+h)$\forall$x ( ($\exists$y L(x,y)) $\wedge$ $\forall$z( L(x,z) $\rightarrow$ (z=y)))\\
+i)$\forall$x $\neg{L(x,x)}$\\
+j) $\exists$x$\exists$y (L(x,y) $\wedge$ y $\neg$x) $\wedge$ $\forall$z(L(x,z) $\wedge$ (z=y) $\wedge$ (z$\neq$x))\\
+
+\section*{Answer 4}
+
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{*6{l}}
+		$1$ & & p $\rightarrow$ (r $\rightarrow$ q)  & \textit{premise} \\
+		$2$ & &  q $\rightarrow$ s & \textit{premise} \\ 
+		$3$ & & p & \textit{premise} \\
+		$4$ & & r  $\rightarrow$ q  &  $\rightarrow$e 1,3 \\  \hline \hline
+		$5$ & & q &  $\textit{Assumption} $ \\
+		 \hline  \multicolumn{0}{|r}{6}
+		$$ & & $\textit{r} $ & $\textit{Assumption} $ &\multicolumn{1}{c|}{}\\ \multicolumn{0}{|r}{7}
+		$$ & & $\textit{q} $ & $\rightarrow e,4 $&\multicolumn{1}{c|}{} \\  \multicolumn{0}{|r}{8}
+		$$& & $\bot $ & $\neg e,2,5 $ &\multicolumn{1}{c|}{}\\ \hline
+		$9$& & $\neg r $ & $\neg i,6-8 $ \\ 	
+		$10$& & $\neg{r} \vee s$ & $\vee{i}$,9  \\ \hline \hline
+		$11$ & & .$\neg{q} \rightarrow (s \vee \neg{r})$ & $\rightarrow$i,5-10 \\
+		
+	\end{tabular}
+\end{table}
+
+\section*{Answer 5}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{*6{l}}
+		$1$ & &  $\forall x ( p(x)  \rightarrow q(x) ) $  & $\textit{premise} $ \\ 
+		$2$ & &$\exists x \neg {r(x)} $& $\textit{premise} $ \\ 
+		$3$ & & $\exists x (p(x) \wedge q(x)) $ & $\textit{premise} $\\ \hline \hline \hline
+		$4$ & & $\neg{r(a)}$ & $\textit{Assumption} $ \\ \hline  \hline
+		$5$ & c & $p(c) \vee r(a) $ & $\textit{Assumption} $ \\ \hline \multicolumn{0}{|r}{6}
+		$$ & & p(c) & $ \textit{Assumption} $ &\multicolumn{1}{c|}{}\\ \multicolumn{0}{|r}{7}
+		$$ & & p(c) & copy &\multicolumn{1}{c|}{}\\ \hline \hline \multicolumn{0}{|r}{8}
+		$$ & & r(a) & $\textit{Assumption} $&\multicolumn{1}{c|}{} \\  \multicolumn{0}{|r}{9}
+		$$ & & $\bot $ & $\neg{e,4,8} $ &\multicolumn{1}{c|}{} \\  \multicolumn{0}{|r}{10}
+		$$ & & p(c) &  $\bot e,9 $  &\multicolumn{1}{c|}{}
+		\\  \hline 
+		$11$ & & p(c) & $\vee e,5,6-7,8-10$ \\ 
+		$12$ & & $\forall y ( p(y)  \rightarrow q(y) ) $  & $\forall xe,1 $ \\ 
+		$13$ & & $p(c) \rightarrow q(c) $ & $\forall xe,12 $ \\ 
+		$14$ & & q(c) & $\rightarrow e,11,13 $ \\ \hline \hline
+		$15$ & & $\exists z q(z)$ & $\exists zi,5-14 $ \\   \hline \hline \hline
+		$16$ & & $\exists z q(z)$ & $\exists ze,4-15 $ \\ 
+		
+		
+		
+	\end{tabular}
+\end{table}
+
+
+
+
+\end{document}

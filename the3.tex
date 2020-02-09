@@ -1,0 +1,88 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+%\topmargin=0cm
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+%\setlength{\leftmargin}{-5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+%misc libraries goes here
+
+
+
+\begin{document}
+
+\section*{Student Information } 
+%Write your full name and id number between the colon and newline
+%Put one empty space character after colon and before newline
+Full Name : Melis Ece ÜNSAL	 \\
+Id Number :  2237865\\
+
+% Write your answers below the section tags
+\section*{Answer 1}
+According to Fermat's Little Theorem:\\
+We begin by considering the first p - 1 positive multiples of a; that is, the integers a, 2a, 3a, ..., (p - 1)a. None of these numbers are congruent modulo p to any other, nor is any congruent to zero. Indeed if it happened that \\
+$r * a \equiv s * a (mod p),  1 \leq r < s \leq p - 1$
+then, r $\equiv$ s (mod p), which is impossible because r and s are both between 1 and p - 1. Hence, the previous set of integers must be congruent modulo p to 1, 2, ... , p - 1. Multiplying these  together gives us\\
+$a * 2a * 3a * ... * (p - 1) * a \equiv 1 * 2 * 3 * ... * (p - 1)(mod p)$\\
+meaning\\
+$a^{p-1} * (p - 1)! \equiv (p - 1)!(mod p).$\\
+Cancelling (p - 1)! from both sides we obtain\\
+$a^{p-1} \equiv 1 (mod p)$,(end of the proof of theorem).\\
+When we put x instead of a, we obtain that y=(p-1) and also y$|$(p-1).
+
+\section*{Answer 2}
+For this statement to be true, right-hand side expression must be equal one of the divisors of 169.\\
+Divisors of 169 are 13,1 and 169.\\
+Now, we should check equality:\\
+$\textbf{1.} 2n^{2}+10n-7 = 13 \rightarrow 2n^{2}+10n-20=0 \rightarrow n^{2}+5n-10=0 $\\
+$\textbf{2.} 2n^{2}+10n-7 = 1 \rightarrow 2n^{2}+10n-8=0 \rightarrow n^{2}+5n-4=0 $ \\
+$\textbf{3.} 2n^{2}+10n-7 = 169 \rightarrow 2n^{2}+10n-176=0 \rightarrow n^{2}+5n-88=0 $ \\
+None of this equations has a root that is positive integer, so that we can say that any positive integer for n for the equation cannot divide 169.
+\section*{Answer 3}
+Let's say a $\equiv$ b(mod m*n), then $a=k*m*n+b$ for some k.\\
+When we write $a-b=k*m*n$, then we can obtain that $a-b \equiv 0mod(m)$ since m is the divisor of the (a-b).\\
+Also, we can obtain  $a-b \equiv 0mod(n)$ with the same idea.\\
+All in all we prove that  $a \equiv bmod(m)$ and $a \equiv bmod(n)$. 
+
+
+\section*{Answer 4}
+Let's say j.(j+1).(j+2)....(j+k-1) is the function that is P(j).\\ 
+\underline{Base Step}:\\
+Take n=1 $\rightarrow \ \sum_{j=1}^{1} P(j) = 1.2.3.4...k =(?)$\\
+$\dfrac{n.(n+1)..(n+k)}{k+1} = \dfrac{1.2..(1+k)}{k+1} $ (Cancel out (k+1)'s)\\
+=  1.2.3.4...k    They're equal \ $\surd$\\
+\underline{Inductive Step}:\\ \\
+Let's say $\sum_{j=1}^{p} P(j) = \dfrac{p.(p+1)..(p+k)}{k+1} \ is \ true. $
+We need to prove this for p+1:\\
+$\sum_{j=1}^{p+1} P(j) = \sum_{j=1}^{p} P(j) + (p+1).(p+2).(p+3)....(p+k)$\\ \\
+ $= \dfrac{p.(p+1)..(p+k)}{k+1} + (p+1).(p+2).(p+3)....(p+k) $ From the assumption above.\\
+ When we do the rational addition, we obtain $\dfrac{(p+k+1).(p+1)..(p+k)}{k+1}$ and this equals:\\
+ $\dfrac{(p+1).(p+2)..(p+k).(p+k+1)}{k+1}$ $\surd$ \\ End of the mathematical induction proof.
+ 
+
+
+\section*{Answer 5}
+\underline{Base Step}:\\
+n=3 :  $H_{3} = 5H_{2} + 5H_{1} + 63H_{0}$\\
+$= 5.5 + 5.3 + 63.1 = 103 < 7^{3}  \surd$  \\ \\
+\underline{Inductive Step}:\\ 
+Let's say $H_{3},H_{4},H_{5}.....,H_{k}$ is true, then we need to prove $H_{k+1}$ is true :\\ \\
+$H_{k+1}=5H_{k}+5H_{k-1}+63H_{k-2}$\\
+$\hspace*{1.5cm} \downarrow \hspace*{1.5cm} \downarrow \hspace*{1.5cm} \downarrow $\\
+$\hspace*{1cm} \leq 5.7^k \hspace*{0.6cm} \leq 5.7^{k-1} \hspace*{0.4cm} \leq 63.7^{k-2} $  (From the assumption above) \\
+$\hspace*{1.5cm} \downarrow \hspace*{1.5cm} \downarrow \hspace*{1.5cm} \downarrow $\\
+$\hspace*{0.8cm} \leq 35.7^{k-1} +\hspace*{0.3cm} \leq 5.7^{k-1} +\hspace*{0.3cm} \leq 9.7^{k-1}  $\\
+So,\\
+$H_{k+1} \leq 49.7^{k-1}$\\
+$H_{k+1} \leq 7^{k+1} \surd$
+
+
+\end{document}
